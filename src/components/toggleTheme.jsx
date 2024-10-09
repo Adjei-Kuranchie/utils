@@ -10,7 +10,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-export const accentColor = `132, 204, 22`;
+export const accentColorRaw = `163, 230, 53`;
+export const accentTailwindText = `text-lime-400`;
+export const accentTailwindBG = `bg-lime-400`;
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

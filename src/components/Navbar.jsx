@@ -5,19 +5,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { GearIcon, LightningBoltIcon, PersonIcon } from "@radix-ui/react-icons";
-
 import Link from "next/link";
-import { PerfectScrollbar } from "perfect-scrollbar";
 import AnimatedCursor from "react-animated-cursor";
 import Breadcrumbs from "./Breadcrumb";
-import { accentColor, ModeToggle } from "./toggleTheme";
+import { accentColorRaw, ModeToggle } from "./toggleTheme";
 
 export const NavIcon = ({ tooltip, side, offset, children }) => {
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <div className="h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:bg-zinc-950 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 hover:duration-300 hover:ease-linear focus:bg-white">
+          <div className="h-10 w-10 flex items-center justify-center rounded-lg hover:bg-zinc-950 hover:text-white dark:hover:bg-white dark:hover:text-zinc-950 hover:duration-300 hover:ease-linear focus:bg-white">
             {children}
           </div>
         </TooltipTrigger>
@@ -75,7 +73,7 @@ const Navbar = ({ children }) => {
 
   return (
     <nav className="h-screen w-full relative bg-white dark:bg-zinc-950 overflow-hidden flex">
-      <AnimatedCursor color={accentColor} />
+      <AnimatedCursor color={accentColorRaw} />
 
       <Aside />
 
@@ -84,7 +82,7 @@ const Navbar = ({ children }) => {
 
         <main className="max-w-full h-full flex relative overflow-y-hidden">
           <div className="h-full w-full m-4 flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 overflow-y-scroll px-9 pt-4 relative">
-            <PerfectScrollbar>{children}</PerfectScrollbar>
+            {children}
           </div>
         </main>
       </div>
